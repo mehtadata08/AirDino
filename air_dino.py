@@ -1,7 +1,14 @@
+from selenium import webdriver
 import pyautogui
 import math
 import cv2
 import numpy as np
+
+driver_path = 'your-chromedriver-path'
+wd = webdriver.Chrome(executable_path=driver_path)
+
+# launch chrome in python environment
+wd.get('http://www.trex-game.skipser.com/')
 
 webcam = cv2.VideoCapture(0)
 
@@ -18,7 +25,7 @@ while webcam.isOpened():
     roi_hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
     # skin color range in HSV
-    lower_skin = np.array([0, 20, 70], dtype="uint8")
+    lower_skin = np.array([0, 48, 80], dtype="uint8")
     upper_skin = np.array([20, 255, 255], dtype="uint8")
 
     # identify skin color (white will be skin color and rest will be black)
