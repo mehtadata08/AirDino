@@ -1,4 +1,4 @@
-AirDino
+AirDino:
 
 Play the famous T-Rex game with your hand.
 
